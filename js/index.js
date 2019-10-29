@@ -9,6 +9,26 @@ busImg.addEventListener('mouseleave',(e)=>{
     busImg.src='img/fun-bus.jpg'
     e.stopPropagation();    
 })
+
+//this is the second mouseenter/mouseleave
+const newLetters = document.querySelector('.text-content p');
+newLetters.addEventListener('mouseenter',(e)=>{
+    newLetters.textContent='DRAG THIS TEXT TO SEE SOMETHING.'
+    newLetters.style.color='gold'
+    newLetters.style.fontWeight='bold'
+    newLetters.style.fontSize='24px'
+    e.stopPropagation();    
+   })
+
+   newLetters.addEventListener('mouseleave',(e)=>{
+    newLetters.textContent='Adventure webdesign pretty design design, excursion cute WordPress blogger design webdesign adventure. Pretty simple traveling fun WordPress wanderlust darn simple organized.'
+    newLetters.style.color='black'
+    newLetters.style.fontWeight='normal'
+    newLetters.style.fontSize='16px'
+    e.stopPropagation();    
+})
+
+
 //KEYDOWN
 const keyDown = document.querySelector('body');
 keyDown.addEventListener('keydown',() =>{
@@ -42,4 +62,12 @@ newText.addEventListener("drag", () => {
     newText.style.border = '2px dashed gray';
     newText.style.backgroundColor='hotpink'
 });
+
+//LOAD
+window.addEventListener('load', function(event){
+    alert('Congratulations your page loaded!')
+    let newBody=document.querySelector('body')
+    newBody.style.backgroundColor='silver'
+   
+    })
 
