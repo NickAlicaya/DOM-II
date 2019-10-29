@@ -10,20 +10,36 @@ busImg.addEventListener('mouseleave',(e)=>{
     e.stopPropagation();    
 })
 //KEYDOWN
-// const keyDown = document.querySelector('window');
-// keyDown.addEventListener('keydown',() =>{
-//     alert('You pressed a key down!')
-// })
+const keyDown = document.querySelector('body');
+keyDown.addEventListener('keydown',() =>{
+    alert('You pressed a key down!')
+})
 
-//WHEEL
+//WHEEL-works but commented out, annoying result
 const newBody = document.querySelector('body')
-newBody.addEventListener('wheel',()=>{
-    newBody.style.backgroundColor='slateblue';
-    })
+// newBody.addEventListener('wheel',()=>{
+//     newBody.style.backgroundColor='slateblue';
+//     alert('You used a mousewheel! press doubleclick to restore default color.');
+//      })
 
 //DBLCLICK
 newBody.addEventListener('dblclick',()=>{
     newBody.style.backgroundColor='white';
     alert('You double clicked this page!')
     })
+
+//RESIZE
+window.addEventListener('resize', function(event){
+alert('This page was resized!')
+let newHeading=document.querySelector('.logo-heading')
+newHeading.style.color='red'
+newHeading.style.fontWeight='bold'
+})
+
+//DRAG
+const newText = document.querySelector('.text-content p');
+newText.addEventListener("drag", () => {
+    newText.style.border = '2px dashed gray';
+    newText.style.backgroundColor='hotpink'
+});
 
