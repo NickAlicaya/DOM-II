@@ -10,7 +10,7 @@ busImg.addEventListener('mouseleave',(e)=>{
     e.stopPropagation();    
 })
 
-//this is the second mouseenter/mouseleave
+//MOUSEENTER AND MOUSELEAVE
 const newLetters = document.querySelector('.text-content p');
 newLetters.addEventListener('mouseenter',(e)=>{
     newLetters.textContent='DRAG THIS TEXT TO SEE SOMETHING.'
@@ -35,12 +35,15 @@ keyDown.addEventListener('keydown',() =>{
     alert('You pressed a key down!')
 })
 
-//WHEEL-works but commented out, annoying result
+//WHEEL
 const newBody = document.querySelector('body')
-// newBody.addEventListener('wheel',()=>{
-//     newBody.style.backgroundColor='slateblue';
-//     alert('You used a mousewheel! press doubleclick to restore default color.');
-//      })
+const newNav = document.querySelector('.main-navigation')
+newBody.addEventListener('wheel',(e)=>{
+    newBody.style.backgroundImage="url('img/bird.jpg')";
+
+newNav.style.backgroundColor='pink'
+e.stopPropagation();
+     })
 
 //DBLCLICK
 newBody.addEventListener('dblclick',()=>{
@@ -70,4 +73,28 @@ window.addEventListener('load', function(event){
     newBody.style.backgroundColor='silver'
    
     })
+
+// PREVENT DEFAULT
+const navLinks = document.querySelectorAll('.nav-link')
+navLinks.forEach(navLink =>{
+        navLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();  
+        navLink.style.backgroundColor='cyan'
+        navLink.style.color='red'
+    })
+})
+
+//SCROLL
+window.addEventListener('scroll', ()=>{
+    console.log('You scrolled')
+    const footerText = document.querySelector('.footer p')
+    footerText.style.fontSize='25px'
+    footerText.style.backgroundColor='coral'
+})
+
+//COPY
+window.addEventListener('copy',()=>{
+    alert('YOU COPIED SOMETHING!');
+})
 
