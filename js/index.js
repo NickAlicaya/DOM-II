@@ -98,3 +98,10 @@ window.addEventListener('copy',()=>{
     alert('YOU COPIED SOMETHING!');
 })
 
+//TWEENMAX
+TweenMax.to(".btn", 2, {
+    y: 30,
+    ease: Elastic.easeOut.config(1, 0.3),
+    yoyo: true,
+    repeat: -1
+  });
